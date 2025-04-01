@@ -21,7 +21,7 @@ function App() {
           <Welcome />
 
           <div>
-            <h1>All The Books</h1>
+            <h1 className='text-center mt-5 fs-2'>All The Books</h1>
             <AllTheBooks jsonData={booksData} />
           </div>
 

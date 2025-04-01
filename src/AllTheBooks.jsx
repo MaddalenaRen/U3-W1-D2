@@ -13,12 +13,12 @@ const AllTheBooks = () => {
     return (
         <Row>
             {books.map((book, index) => (
-                <Col key={index} xs={12} sm={6} md={4} lg={3}>
-                    <Card>
-                        <Card.Img variant="top" src={book.img} />
-                        <Card.Body>
-                            <Card.Title>{book.title}</Card.Title>
-                            <Card.Text>
+                <Col key={index} xs={12} sm={6} md={4} lg={3} className="my-3">
+                    <Card className="h-100 w-100">
+                        <Card.Img variant="top" src={book.img} className="h-100" />
+                        <Card.Body className="d-flex flex-column">
+                            <Card.Title className="text-truncate">{book.title}</Card.Title>
+                            <Card.Text className="text-truncate">
                                 <strong>Price:</strong> ${book.price}
                                 <br />
                                 <strong>Category:</strong> {book.category}
