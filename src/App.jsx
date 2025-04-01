@@ -5,8 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import MyNav from './MyNav.jsx';
 import MyFooter from './MyFooter.jsx';
 import Welcome from './Welcome.jsx';
-import AllTheBooks from './AllTheBooks';
-import booksData from './fantasy.json'
+import AllTheBooks from './AllTheBooks.jsx';
+
 
 function App() {
   const [temaColore, setTemaColore] = useState("primary");
@@ -22,7 +22,7 @@ function App() {
 
           <div>
             <h1 className='text-center mt-5 fs-2'>All The Books</h1>
-            <AllTheBooks jsonData={booksData} />
+            <AllTheBooks />
           </div>
 
 
