@@ -2,32 +2,35 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import MyNav from './MyNav.jsx';
+import MyFooter from './MyFooter.jsx';
+import Welcome from './Welcome.jsx';
+import AllTheBooks from './AllTheBooks';
+import booksData from './fantasy.json'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [temaColore, setTemaColore] = useState("primary");
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="d-flex flex-column min-vh-100">
+        <MyNav temaColore={temaColore} />
+
+        <main className="container flex-grow-1 mt-4">
+          <Welcome />
+
+          <div>
+            <h1>All The Books</h1>
+            <AllTheBooks jsonData={booksData} />
+          </div>
+
+
+        </main>
+
+        <MyFooter />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
     </>
   )
 }
