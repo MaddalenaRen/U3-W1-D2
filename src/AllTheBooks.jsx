@@ -24,7 +24,7 @@ const AllTheBooks = () => {
                                 <strong>Category:</strong> {book.category}
                             </Card.Text>
                             <Button variant="primary" href={`https://www.amazon.com/dp/${book.asin}`} target="_blank">
-                                Buy Now
+                                Compra!
                             </Button>
                         </Card.Body>
                     </Card>
