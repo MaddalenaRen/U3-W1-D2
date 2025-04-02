@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import { Card, Button, Row, Col } from 'react-bootstrap';
-
-
 import fantasyBooks from './books/fantasy.json';
 import horrorBooks from './books/horror.json';
 import historyBooks from './books/history.json'
