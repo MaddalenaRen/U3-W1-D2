@@ -31,7 +31,17 @@ function App() {
           <Welcome />
 
           <div>
+
             <h1 className='text-center mt-5 fs-2'>All The Books</h1>
+            <div className='my-5 fs-3'>
+              <h2 className="text-center">BEST SELLERS</h2>
+              <div className="mx-2 d-flex justify-content-center gap-3">
+                <SingleBook book={fantasyBooks[10]} />
+                <SingleBook book={romanceBooks[1]} />
+                <SingleBook book={scifiBooks[6]} />
+              </div>
+
+            </div>
 
             <h2>Fantasy Books</h2>
             <BookList books={fantasyBooks} />
@@ -50,7 +60,7 @@ function App() {
 
             {/* <AllTheBooks /> */}
 
-            <SingleBook />
+
           </div>
 
 
