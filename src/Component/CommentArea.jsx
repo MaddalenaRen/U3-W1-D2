@@ -20,15 +20,15 @@ class CommentArea extends Component {
             .then((response) => {
                 if (response.ok) {
 
-                    return response.json();  // Trasforma la risposta in JSON
+                    return response.json();
                 } else {
                     throw new Error('Errore nella fetch');
                 }
             }).then(data => {  // Salva i commenti nel stato
                 this.setState({ comments: data }); // Impostiamo i commenti nel nostro stato
             })
-            .catch(error => console.error('Error fetching comments:', error)); // Gestiamo gli errori
-    } // Esegue l'effetto ogni volta che bookId cambia
+            .catch(error => console.error('Error fetching comments:', error));
+    }
 
     // Funzione per aggiungere un commento
     handleInputChange = (e) => {
@@ -57,7 +57,7 @@ class CommentArea extends Component {
         })
             .then((response) => {
                 if (response.ok) {
-                    return response.json(); // Se la risposta è positiva, converte in JSON
+                    return response.json();
                 } else {
                     throw new Error('Errore nell\'invio del commento');
                 }
@@ -71,7 +71,27 @@ class CommentArea extends Component {
                 }));
             })
 
-            .catch(error => console.error('Error adding comment:', error)); // Gestiamo gli errori
+            .catch(error => console.error('Error adding comment:', error));
+    };
+
+    handleDeleteComment = (commentId) => {
+        fetch(`https://striveschool-api.herokuapp.com/api/comments/${commentId}`, {
+            method: 'DELETE',
+            headers: {
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2VlOGIxZTk0OTJlNDAwMTVlN2M2ZmMiLCJpYXQiOjE3NDM2ODY0MzAsImV4cCI6MTc0NDg5NjAzMH0.zXcBLVSlNuYEWVdsZTpnxINfAh5B_djo697OXkNGCdY",
+            }
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Rimuoviamo il commento da stato
+                    this.setState(prevState => ({
+                        comments: prevState.comments.filter(comment => comment._id !== commentId)
+                    }));
+                } else {
+                    throw new Error('Errore nella cancellazione del commento');
+                }
+            })
+            .catch(error => console.error('Error deleting comment:', error));
     };
 
     render() {

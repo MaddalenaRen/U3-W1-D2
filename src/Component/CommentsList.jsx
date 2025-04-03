@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, ListGroup } from 'react-bootstrap';
+import { Card, ListGroup, Button } from 'react-bootstrap';
 
 
 const CommentsList = ({ comments }) => {
@@ -9,8 +9,17 @@ const CommentsList = ({ comments }) => {
             <ListGroup variant="flush">
                 {comments.map((comment, index) => (
                     <ListGroup.Item key={index} className="mb-3">
-                        <p><strong>Rating: {comment.rate}</strong></p>
-                        <p>{comment.comment}</p>
+                        <div>
+                            <p><strong>Rating: {comment.rate}</strong></p>
+                            <p>{comment.comment}</p>
+                        </div>
+                        <Button
+                            variant="danger"
+                            onClick={() => onDeleteComment(comment._id)}
+                            size="sm"
+                        >
+                            DELETE
+                        </Button>
                     </ListGroup.Item>
                 ))}
             </ListGroup>
