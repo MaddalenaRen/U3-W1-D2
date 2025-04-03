@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Row, Col } from 'react-bootstrap';
 
 import MyNav from './MyNav.jsx';
 import MyFooter from './MyFooter.jsx';
@@ -37,30 +38,28 @@ function App() {
             <h1 className='text-center mt-5 fs-2'>All The Books</h1>
             <div className='my-5 fs-3'>
               <h2 className="text-center">BEST SELLERS</h2>
-              <div className="mx-2 d-flex justify-content-center gap-3">
-                <SingleBook book={fantasyBooks[10]} />
-                <SingleBook book={romanceBooks[1]} />
-                <SingleBook book={scifiBooks[6]} />
-              </div>
+
+              <Row className="mb-4">
+
+                <Col xs={12} sm={6} md={4} lg={3} className="mb-4">
+                  <SingleBook book={fantasyBooks[10]} />
+                </Col>
+                <Col xs={12} sm={6} md={4} lg={3} className="mb-4">
+                  <SingleBook book={romanceBooks[1]} />
+                </Col>
+                <Col xs={12} sm={6} md={4} lg={3} className="mb-4">
+                  <SingleBook book={scifiBooks[6]} />
+                </Col>
+                <Col xs={12} sm={6} md={4} lg={3} className="mb-4">
+                  <SingleBook book={horrorBooks[33]} />
+                </Col>
+              </Row>
 
             </div>
 
-            <h2>Fantasy Books</h2>
-            <BookList books={fantasyBooks} />
 
-            <h2>Horror Books</h2>
-            <BookList books={horrorBooks} />
 
-            <h2>History Books</h2>
-            <BookList books={historyBooks} />
-
-            <h2>Sci-Fi Books</h2>
-            <BookList books={scifiBooks} />
-
-            <h2>Romance Books</h2>
-            <BookList books={romanceBooks} />
-
-            {/* <AllTheBooks /> */}
+            <AllTheBooks />
 
 
           </div>

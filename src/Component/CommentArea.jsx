@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CommentsList from './CommentsList';
 import AddComment from './AddComment';
+import { Spinner } from 'react-bootstrap';
 
 
 class CommentArea extends Component {

@@ -52,7 +52,7 @@ class SingleBook extends Component {
         return (
 
 
-            <Col xs={12} sm={6} md={4} lg={3} className="mb-4">
+            <>
                 <Card className={`h-100 ${cardClass}`} style={cardStyle} onClick={this.toggleSelect}>
                     <Card.Img variant="top" src={book.img} className="h-100" />
                     <Card.Body className="d-flex flex-column">
@@ -82,7 +82,8 @@ class SingleBook extends Component {
                         </Button>
                     </Modal.Footer>
                 </Modal>
-            </Col>
+            </>
+
 
 
 
